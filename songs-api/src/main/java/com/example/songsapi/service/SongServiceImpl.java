@@ -1,9 +1,9 @@
-package service;
+package com.example.songsapi.service;
 
-import model.Song;
+import com.example.songsapi.model.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.SongRepository;
+import com.example.songsapi.repository.SongRepository;
 
 import java.util.List;
 
@@ -25,14 +25,14 @@ public class SongServiceImpl implements SongService {
 
     @Override
     public Song updateSong(Song song) {
-        Song savedSong = (Song) songRepository.findAllById(song.getSongId());
+        Song savedSong = songRepository.findById(song.getSongId()).orElse(null);
         savedSong.setSongTitle(song.getSongTitle());
         savedSong.setSongLength(song.getSongLength());
         return songRepository.save(savedSong);
     }
 
     @Override
-    public Iterable<Long> deleteSong(Long song_id) {
+    public Long deleteSong(Long song_id) {
         Song savedSong = songRepository.findById(song_id).orElse(null);
         songRepository.delete(savedSong);
         return savedSong.getSongId();

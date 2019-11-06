@@ -1,12 +1,13 @@
-package controller;
+package com.example.songsapi.controller;
 
-import model.Song;
+import com.example.songsapi.model.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.SongService;
+import com.example.songsapi.service.SongService;
 
 import java.util.List;
 
+//rest controller song doesn't include the /song endpoint
 @RestController("/song")
 public class SongController {
     @Autowired
@@ -33,7 +34,7 @@ public class SongController {
     }
 
     @DeleteMapping("/delete")
-    public Iterable<Long> deleteSong(Long song_id) {
+    public Long deleteSong(Long song_id) {
         return songService.deleteSong(song_id);
     }
 }

@@ -1,6 +1,6 @@
-package repository;
+package com.example.songsapi.repository;
 
-import model.Song;
+import com.example.songsapi.model.Song;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 

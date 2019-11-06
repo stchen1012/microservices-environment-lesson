@@ -1,13 +1,14 @@
-package model;
+package com.example.songsapi.model;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "songs")
 public class Song {
+
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Iterable<Long> songId;
+    private Long songId;
 
     @Column(name = "song_title")
     private String songTitle;
@@ -15,11 +16,11 @@ public class Song {
     @Column(name = "song_length")
     private Long songLength;
 
-    public Iterable<Long> getSongId() {
+    public Long getSongId() {
         return songId;
     }
 
-    public void setSongId(Iterable<Long> songId) {
+    public void setSongId(Long songId) {
         this.songId = songId;
     }
 

@@ -5,3 +5,7 @@ VALUES ('quinto', 'timothy', 'quinto'),
 ('onionfan', 'ser', 'davos'),
 ('1337codr', 'mad', 'hax'),
 ('badstash', 'charlie', 'chaplin');
+
+INSERT INTO songs(song_title, song_length)
+VALUES ('batman', 1.5),
+('robin', 2.5);
